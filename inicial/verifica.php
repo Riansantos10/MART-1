@@ -1,0 +1,67 @@
+<?php 
+    session_start();
+
+    include "../base_de_dados/conexao.php";
+
+    $SQL = "SELECT 
+                id, nome, sobrenome, email, senha, data_de_nasc, cidade, editais_s_n
+            FROM
+                cliente
+            WHERE
+                email = '".$_POST['mail']."' AND senha = '".$_POST['senha']."'";
+
+    $query = mysqli_query($conexao, $SQL);
+
+    if(mysqli_num_rows($query) > 0) //Se verdadeiro
+    {
+        while($registros = mysqli_fetch_assoc($query))
+        {
+            $_SESSION['id'] = $registros['id'];
+            $_SESSION['nome'] = $registros['nome'];
+            $nome = $registros['nome'];
+            $_SESSION['sobrenome'] = $registros['sobrenome'];
+            $_SESSION['email'] = $registros['email'];
+            $_SESSION['senha'] = $registros['senha'];
+            $_SESSION['data_de_nasc'] = $registros['data_de_nasc'];
+            $_SESSION['cidade'] = $registros['cidade'];
+            $_SESSION['editais_s_n'] = $registros['editais_s_n'];
+        }
+        header("location:../menu/menu.php");
+    }
+    else
+    {
+        $SQL_two = "SELECT 
+                        cnpj, nome_empresa, email, senha, localizacao, cidade, tipos_eventos
+                    FROM 
+                        empresa
+                    WHERE
+                        email = '".$_POST['mail']."' AND senha = '".$_POST['senha']."'";
+        $query_two = mysqli_query($conexao, $SQL_two);
+
+        if(mysqli_num_rows($query_two) > 0) //Se verdadeiro
+        {
+            while($registros_two = mysqli_fetch_assoc($query_two))
+            {
+                echo "entrou";
+                $_SESSION['cnpj'] = $registros_two['cnpj'];
+                $_SESSION['nome_empresa'] = $registros_two['nome_empresa'];
+                $_SESSION['email'] = $registros_two['email'];
+                $_SESSION['senha'] = $registros_two['senha'];
+                $_SESSION['localizacao'] = $registros_two['localizacao'];
+                $_SESSION['cidade'] = $registros_two['cidade'];
+                $_SESSION['tipos_eventos'] = $registros_two['tipos_eventos'];
+            }
+            var_dump($_SESSION['cnpj']);
+            header("location:../menu_empresa/menu.php");
+        }
+        else
+        {
+            echo "erros";
+            var_dump($SQL_two);
+        }
+
+    }
+
+
+    mysqli_close($conexao);
+?>
