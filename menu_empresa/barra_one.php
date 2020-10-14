@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-static-top">
-    <a class="navbar-brand" href="../menu_empresa/menu.php"><?php print $_SESSION["nome_empresa"]; ?></a>
+    <a class="navbar-brand" href="../menu_empresa/menu.php"><?php print $_SESSION['nome_empresa']; ?></a>
       <ul class="navbar-nav">
 
         <p class="text-right"></p>

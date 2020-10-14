@@ -29,6 +29,8 @@
     </head>
 
     <body>
+
+
         <?php
             session_start();
 
@@ -60,6 +62,7 @@
                 {
 
                     print '<tr><td>'.$count.'</td>';
+                    print '<td class = "'.$registros["id_evento"].'">'.$registros["id_evento"].'</td>';
                     print '<td>'.$registros["nome"].'</td>';
                     print '<td>'.$registros["descricao"].'</td>';
                     print '<td>'.$registros["local"].'</td>';
@@ -74,10 +77,8 @@
             {
                 print '<a class = "display-4">Nenhum evento registrado</a>';
             }
-
+            
             mysqli_close($conexao);
-        
-        
         ?>
 
 

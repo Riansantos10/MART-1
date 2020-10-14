@@ -56,7 +56,8 @@
         }
         else
         {
-            header("location:../inicial/pagina_inicial.php");
+            echo "erros";
+            var_dump($SQL_two);
         }
 
     }
