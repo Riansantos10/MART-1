@@ -36,6 +36,8 @@
         
         <?php include("../menu_empresa/barra.php"); ?>
         <br />
+        
+        
         <section id = "area"></section>
 		
         
