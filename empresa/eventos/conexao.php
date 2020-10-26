@@ -15,7 +15,7 @@
 
 
 	//selecionando a base de dados
-	$db = mysqli_select_db($conexao, "mart_banco");
+	$db = mysqli_select_db($conexao, "mart_banco_new");
 
 	if(!$db)
 	{

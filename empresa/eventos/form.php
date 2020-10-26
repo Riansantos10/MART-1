@@ -3,7 +3,7 @@
     session_start();
 
 
-    echo '<form action = "../empresa/eventos/processa_eventos.php" method = "POST" class="form">
+    echo '<form action = "../empresa/eventos/processa_eventos.php" method = "POST" class="form" enctype="multipart/form-data">
             <label>
                 Nome do evento:
             </label>
@@ -43,6 +43,24 @@
                 URL(endereço do evento online):
             </label>
             <input type = "url" name = "url" value = "" class = "form-control form-control-sm"/>
+
+            <br />
+
+            <label>
+			    Foto de perfil do evento:
+            </label>
+            
+            <input type="file" name="perfil" accept="image/*" class="form-control form-control-lg"/>
+            
+            <br />
+            
+            <label>
+                Foto de capa do evento:
+            </label>
+            
+            <input type="file" name="capa" accept="image/*" class="form-control form-control-lg"/>
+            
+            <br />
 
             <input type = "submit" name = "submeter" value = "ENVIAR" class="form-control"/>
             <input type = "reset" name = "resetar" value = "LIMPAR" class="form-control"/>

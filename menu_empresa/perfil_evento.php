@@ -210,7 +210,14 @@
             print '<h1 class = "display-3">Informações sobre seu próprio evento</h1>';
             include("../base_de_dados/conexao.php");
 
+        ?>
 
+        <p id = "area_foto">
+            <?php 
+                include("../empresa/eventos/foto_evento_perfil.php");
+            ?>
+        </p>
+        <?php
 
             $_SESSION["id_evento"] = $_POST["id_evento"];
             $sessao_exclu = $_POST["id_evento"];
