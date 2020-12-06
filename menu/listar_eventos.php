@@ -15,7 +15,7 @@
     $query_list = mysqli_query($conexao, $SQL_list);
     if(mysqli_num_rows($query_list) > 0) //Se verdadeiro
     {
-        print '<div class="form-group col-md-6""><table class = "table table-hover">';
+        print '<div class="form-group"><table class = "table table-hover">';
         print '<thead class="thead-dark">
                     <tr>
                         <th>Nome do evento</th>

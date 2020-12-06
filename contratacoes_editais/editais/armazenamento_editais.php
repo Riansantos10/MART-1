@@ -43,17 +43,18 @@
   <body>
       
       <?php include("barra.php"); ?>
-    <h2>Públicação de editais</h2>
-
-    <button id = "create" class="btn btn-dark">Criar novo edital</button>
-    <section id = "create_new_edital">
-
-    </section>
-      <br />
-    <button id = "list" class="btn btn-dark">Visualizar editais da empresa</button>
-    <section id = "list_all_editais">
-
-    </section>
+    <center><h2>Públicação de editais</h2></center>
+    <div style = "display: inline-block; border: 1px solid black; margin: 5% 20% 25% 35%; padding-right: 10%;" class = "jumbotron">
+        <button id = "create" class="btn btn-dark" >Criar novo edital</button>
+        <section id = "create_new_edital">
+            <p style = "margin-bottom: 15%; margin-top: 15%;">Caso você deseja publicar<br /> algum edital de eventos<br /> culturais nas redes, <br />para atrair a possibilidade<br /> grupos artistícos, é só clicar.</p>
+        </section>
+          <br />
+        <button id = "list" class="btn btn-dark" style = "margin-top: 10%; margin-bottom: 15%;">Visualizar editais da empresa</button>
+        <section id = "list_all_editais" style = " margin-top: 5%;">
+            <p style = "margin-bottom: 35%;">Visualizar os editais públicados <br />pela empresa</p>
+        </section>
+    </div>
       <br />
 
   </body>

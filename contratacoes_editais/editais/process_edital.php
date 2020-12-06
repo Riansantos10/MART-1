@@ -18,6 +18,9 @@
 
         $query = mysqli_query($conexao, $SQL);
 
+        var_dump($query);
+
+
 
         print "<h1>Edital publicado</h1>";
         print '<br /><a href = "armazenamento_editais.php">Voltar</a>';

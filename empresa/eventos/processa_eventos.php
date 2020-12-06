@@ -18,8 +18,8 @@
             
             
 
-            $location = "../eventos/img/".$filename;
-            $location_two = "../eventos/img/".$filename_two;
+            $location = "img_eventos/".$filename;
+            $location_two = "img_eventos/".$filename_two;
             
             $uploadOk = 1;
             $uploadOk_two = 1;
@@ -41,8 +41,8 @@
             }
             else
             {  
-                $newName = '../eventos/img/'.md5(uniqid($filename)).".".$imageFileType;
-                $newName_two = '../eventos/img/'.md5(uniqid($filename_two)).".".$imageFileType_TWO;
+                $newName = 'img_eventos/'.md5(uniqid($filename)).".".$imageFileType;
+                $newName_two = 'img_eventos/'.md5(uniqid($filename_two)).".".$imageFileType_TWO;
                 
                 if((move_uploaded_file($_FILES['perfil']['tmp_name'], $newName)) AND ((move_uploaded_file($_FILES['capa']['tmp_name'], $newName_two))))
                 {

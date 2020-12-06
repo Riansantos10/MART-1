@@ -4,7 +4,7 @@
     include "../base_de_dados/conexao.php";
 
     $SQL = "SELECT 
-                id, nome, sobrenome, email, senha, data_de_nasc, cidade, editais_s_n
+                id, nome, sobrenome, email, senha, data_de_nasc, cidade, editais_s_n, foto_perfil, foto_capa
             FROM
                 cliente
             WHERE
@@ -25,13 +25,15 @@
             $_SESSION['data_de_nasc'] = $registros['data_de_nasc'];
             $_SESSION['cidade'] = $registros['cidade'];
             $_SESSION['editais_s_n'] = $registros['editais_s_n'];
+            $_SESSION["perfil"] = $registros['foto_perfil'];
+	        $_SESSION["capa"] = $registros['foto_capa'];
         }
         header("location:../menu/menu.php");
     }
     else
     {
         $SQL_two = "SELECT 
-                        cnpj, nome_empresa, email, senha, localizacao, cidade, tipos_eventos
+                        cnpj, nome_empresa, email, senha, localizacao, cidade, tipos_eventos, foto_empresa, capa_empresa
                     FROM 
                         empresa
                     WHERE
@@ -50,6 +52,8 @@
                 $_SESSION['localizacao'] = $registros_two['localizacao'];
                 $_SESSION['cidade'] = $registros_two['cidade'];
                 $_SESSION['tipos_eventos'] = $registros_two['tipos_eventos'];
+                $_SESSION["perfil"] = $registros_two['foto_empresa'];
+	            $_SESSION["capa"] = $registros_two["capa_empresa"];
             }
             var_dump($_SESSION['cnpj']);
             header("location:../menu_empresa/menu.php");

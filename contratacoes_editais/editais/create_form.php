@@ -1,7 +1,7 @@
 <?php
   $datetime = new DateTime();
 
-  $a = '<a style = "display: inline-block; border: 1px solid black"><form action = "process_edital.php" method = "POST">
+  $a = '<a style = "display: inline-block; margin-bottom: 10%; margin-right: 15%;"><form action = "process_edital.php" method = "POST">
   <label>Nome do edital:</label> <input type = "text" name = "name_edital" value = "" class = "form-control"/>
   <br /><label>Data de Públicação:</label> <input type = "date" name = "data_edital" value = "" class = "form-control"/>
   <br /><label>Descrição: </label><textarea name = "descricao" class = "form-control"></textarea>

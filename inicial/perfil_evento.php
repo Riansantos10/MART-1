@@ -96,6 +96,15 @@
 		<?php
 			include("../base_de_dados/conexao.php");
 
+        ?>
+
+        <p id = "area_foto">
+            <?php 
+                include("../empresa/eventos/foto_evento_perfil.php");
+            ?>
+        </p>
+
+        <?php
 			$SQL = 'SELECT
 						 id_evento, nome, descricao, local, data_horario, url
 					FROM
@@ -107,23 +116,13 @@
 
 			if(mysqli_num_rows($query) > 0) //Se verdadeiro
 			{
-				print '<table class = "table table-bordered table-hover">';
-                print '<thead class="thead-dark">
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Descrição</th>
-                                    <th>Local</th>
-                                    <th>Data e hora</th>
-                                    <th>Publico comfirmado</th>
-                                </tr>
-                            </thead>';
+				
 				while($registros = mysqli_fetch_assoc($query))
 				{
-					print '<tr>';
-					print '<td>'.$registros["nome"].'</td>';
-					print '<td>'.$registros["descricao"].'</td>';
-					print '<td>'.$registros["local"].'</td>';
-					print '<td>'.$registros["data_horario"].'</td>';
+					print '<span style="font-weight:bold;">'.$registros["nome"].'</span>';
+                    //$registros["descricao"];
+                    //$registros["local"];
+                    //$registros["data_horario"];
                     
                     $SQL_TWO = 'SELECT * FROM publico WHERE evento_id = '.$_SESSION["id_evento"].';';
                     
@@ -131,13 +130,10 @@
                     
                     $publico = mysqli_num_rows($query_two);
                     
-                    print '<td>'.$publico.'</td>';
-                    
-					print '</tr>';
                     $data_evento = $registros["data_horario"];
                     $url = $registros["eventos.url"];
 				}
-				print "</table>";
+				
 			 
                     
                 }    

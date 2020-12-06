@@ -14,7 +14,7 @@
 
   if(mysqli_num_rows($query) > 0) //Se verdadeiro
   {
-      print '<table class="table table-hover">';
+      print '<table class="table table-hover" style = "margin-bottom: 5%;">';
       print '<thead><th colspan = "5">Informações</th></thead>';
       while($registros = mysqli_fetch_assoc($query))
       {

@@ -2,10 +2,15 @@
 
 <hmtl>
     <head>
-        <meta charset="UTF-8" />
         <title>Menu</title>
+
+        <meta charset = "UTF-8" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script>
 			function eve(id_evento)
 			{
@@ -17,7 +22,8 @@
                     data: {id_evento:id_evento},
                     success: function(get_back)
                     {
-                         $("body").html(get_back);
+                         $("#data").html(get_back);
+                         $("#modal_repre").modal('show');
                     }
 				});
 			}
@@ -28,44 +34,81 @@
     <body class =  ".display-3">
         
         <?php include("barra_usu.php") ?>
-        
+        <center class = "jumbotron">
+		    <h1 href = "pagina_inicial.php" class = "display-3" style = "background-color: black; color: white;margin-left: 25%; margin-right: 25%; margin-top: 5%; padding: 2.5%;">Bem vindo ao MART</h1>
+            <h2>ACOMPANHE OS EVENTOS QUE RODAM A SUA REGIÃO</h2>
+        </center>
         <section class = "area_eventos">
-			<h2>ACOMPANHE OS EVENTOS QUE RODAM AS SUA REGIÃO</h2>
+			<h2>ACOMPANHE OS EVENTOS QUE RODAM A SUA REGIÃO</h2>
+
+            <div>
+                <?php include("../inicial/slides.php"); ?>
+        
+            </div>
 			<?php
 				include("../base_de_dados/conexao.php");
 
 				$SQL = "SELECT 
-							 id_evento, nome, descricao, local, data_horario
+                            id_evento, nome, descricao, local, data_horario, perfil_evento, capa_evento
 						FROM
-							eventos";
-				$query = mysqli_query($conexao, $SQL);
+                            eventos";
+                            
+                $query = mysqli_query($conexao, $SQL);
+                
 				if(mysqli_num_rows($query) > 0) //Se verdadeiro
 				{
-					$count = 1;
-					print '<table class = "table table-hover">';
-                    print '<thead class="thead-dark">
-                                <tr>
-                                    <th></th>
-                                    <th>Nome</th>
-                                    <th>Descrição</th>
-                                    <th>Local</th>
-                                    <th>Data e hora</th>
-                                    <th>Link de acesso</th>
-                                </tr>
-                            </thead>';
+                    print '<div class="row">';
 					while($registros = mysqli_fetch_assoc($query))
 					{
-						print '<tr><td>'.$count.'</td>';
-						print '<td>'.$registros["nome"].'</td>';
-						print '<td>'.$registros["descricao"].'</td>';
-						print '<td>'.$registros["local"].'</td>';
-						print '<td>'.$registros["data_horario"].'</td>';
-						print '<td><button class="font-weight-bold btn btn-light btn btn-outline-dark" onClick = eve('.$registros["id_evento"].');>Acesse o evento</button></td></tr>';
 
-						$count = $count + 1;
-					}
-					print "</table>";
-				}
+                        print '<div class="card" style="width: 18%; margin: 25px 50px 75px 100px; background-color: black;">
+                                    <img class="card-img-top" src= "../empresa/eventos/'.$registros["perfil_evento"].'" alt="Card image cap" style = "min-width: 20%; max-height: 300px; min-height: 300px;">
+                                    <div class="card-body" style = "color: white;">
+                                        <h5 class="card-title">'.$registros["nome"].'</h5>
+                                        <p class="card-text">Descrição do evento: '.$registros["descricao"].'</p>
+                                        <p class = "card-text">Momento: '.$registros["data_horario"].'</p>
+                            
+                            
+                                        <a>
+                                            <button type="button" class="btn btn-primary font-weight-bold btn btn-light btn btn-outline-dark" data-toggle="modal" data-target="#modal_repre" onClick = "eve('.$registros['id_evento'].');">Acessar evento</button></td>
+                                        </a>
+
+                                
+                                    </div>
+                                </div>';        
+
+                        $count = $count + 1;
+                        
+                        print '<div class = "modal fade bd-example-modal-lg" id = "modal_repre" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id = "nome_evento">Detalhes do evento</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <a id = "data"></a>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+			            </div>
+                            ';
+					};
+					
+                };
+                print "</div>"
+
+                
 			?>
 		</section>
     

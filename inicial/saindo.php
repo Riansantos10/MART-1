@@ -1,7 +1,7 @@
 <?php
     session_start();
     $a = $_POST["a"];
-    $b = $_SESSION["id_evento"];
+    $b = $_POST["b"];
 
     include "../base_de_dados/conexao.php";
 

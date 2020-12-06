@@ -205,24 +205,27 @@
     </head>
     <body>
         <?php
-           
+           $_SESSION["id_evento"] = $_POST["id_evento"];
             include("../menu_empresa/barra_one.php");
             print '<h1 class = "display-3">Informações sobre seu próprio evento</h1>';
             include("../base_de_dados/conexao.php");
 
         ?>
 
-        <p id = "area_foto">
+        <p id = "area_foto" style = "margin-bottom: 25%;">
             <?php 
                 include("../empresa/eventos/foto_evento_perfil.php");
             ?>
         </p>
         <?php
 
-            $_SESSION["id_evento"] = $_POST["id_evento"];
+            
             $sessao_exclu = $_POST["id_evento"];
            
             //print $_SESSION["id_evento"];
+
+            //print $_POST["id_evento"];
+            include("../base_de_dados/conexao.php");
 
 
             $SQL = 'SELECT
@@ -233,6 +236,7 @@
                         id_evento = '.$_POST["id_evento"].';';
 
             $query = mysqli_query($conexao, $SQL);
+            //print $SQL;
 
             print '<style rel="stylesheet" type="text/css">
                         .imagem{

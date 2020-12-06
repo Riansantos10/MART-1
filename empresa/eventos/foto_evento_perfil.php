@@ -16,13 +16,24 @@
     <body>
         <?php 
             include("../base_de_dados/conexao.php");
+            
+
+            if($_SESSION["id_evento"] == NULL)
+            {
+                $id_c = $_POST["id"];
+            }
+            else
+            {
+                $id_c = $_SESSION["id_evento"];
+            }
+
 
             $SQL = 'SELECT
                          perfil_evento, capa_evento
                     FROM
                         eventos
                     WHERE
-                        id_evento = '.$_SESSION["id_evento"].';';
+                        id_evento = '.$id_c.';';
 
             $query = mysqli_query($conexao, $SQL);
 
@@ -32,10 +43,14 @@
                 $capa = $registros["capa_evento"];
             }
             
-            print $foto;
-            echo '<img src= "'.$foto.'" height="42" width="42"/>';
+            //print $foto;
+            print '<div><img src= "../empresa/eventos/'.$foto.'" height= "450px" width="100%" style = "margin-top: 3%; filter: blur(4px); position:absolute; left:1px; top:1px; z-index: 1;"/>';
+            print '<img src= "../empresa/eventos/'.$foto.'" height= "250px" width="250px" style = "margin-top: 15%; margin-left: 2%; position:absolute; left:1px; top:1px; z-index: 2;"/></div>';
+            
+            mysqli_close($conexao);
 
         ?>
+
         
     </body>
 </html>
