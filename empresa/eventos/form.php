@@ -21,6 +21,13 @@
             <br />
 
             <label>
+                Cidade:
+            </label>
+            <input type = "text" name = "cidade" value = "" required class="form-control form-control-sm"/>
+
+            <br />
+
+            <label>
                 Local físico do evento:
             </label>
             <input type = "text" name = "endereco" value = "" required class="form-control form-control-sm"/>

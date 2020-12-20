@@ -54,7 +54,7 @@
                     if(a == 00)
                     {
                         alert("Para participar do evento é necessário a realização de um login!");
-                        $('#logado').append('<h1>Realize seu login</h1><form action = "verifica.php" method = "POST"><br /><label>E-mail:</label><input type  = "mail" name = "mail" value = "" /><br /><label>Senha</label><input type = "password" name = "senha" value = "" /><br /><input type = "submit" name = "Submeter" value = "Logar"/><br /><input type = "reset" name = "resetar" value = "limpar"/></form>');
+                        //$('#logado').append('<h1>Realize seu login</h1><form action = "verifica.php" method = "POST"><br /><label>E-mail:</label><input type  = "mail" name = "mail" value = "" /><br /><label>Senha</label><input type = "password" name = "senha" value = "" /><br /><input type = "submit" name = "Submeter" value = "Logar"/><br /><input type = "reset" name = "resetar" value = "limpar"/></form>');
                     }
                     else
                     {
@@ -75,11 +75,7 @@
                         window.location.reload();
                     }
 			    }
-			    function botao_cadastro()
-			    {
-				    $('#area_cadas').append('<h1>Seja um cliente MART</h1><form action = "../comum/processa.php" method = "POST"><label>Nome:</label> <input type = "text" name = "nome" value = "" required /><label>Sobrenome:</label> <input type = "text" name = "sobrenome" value = "" required/><br /><label>E-mail:</label> <input type = "text" name = "mail" value = "" required/><label>Senha: </label> <input type = "password" name = "senha" value = "" required/><br /><label>Data de nascimento:</label> <input type = "date" name = "data" value = "" required/> <label>Cidade: </label> <input type = "text" name = "city" value = "" required/><br /><label>Deseja estar ciente sobre seleções de grupos artísticos ou a abertura de editais?</label> Sim<input type = "radio" name = "editais" value = "Sim" /> Não<input type = "radio" name = "editais" value = "Nao" /> <br /> <input type = "submit" name = "submeter" value = "Enviar" required/><input type = "reset" name = "resetar" value = "Limpar" required/></form>');
-			    }
-                
+			    
                 function url(url)
                 {
                     
@@ -91,6 +87,7 @@
         </head>
 
 	<body>
+
         
             <?php
                                                 
@@ -99,6 +96,7 @@
                 {
                     $id_c = $_POST["id"];
                     $_SESSION["id_evento"] = $id_c;
+
                     //print "oiiiiiiii";
                    
                 }
@@ -106,7 +104,7 @@
                 {
                     
                     $id_c = $_SESSION["id_evento"]; 
-
+                    
                 }
 
 
@@ -114,12 +112,15 @@
                 if($true == 00)
                 {
                     
-                    print '<h1> <a href = "pagina_inicial.php" style = "background-color: white; color: black; margin-left: 40%; display: inline-block; boder: 1px solid black;">Bem vindo ao MART</a></h1>';        
+                   
+                   print '<div>';
+                    include("../inicial/barra.php");
+                    print '</div>';
                 }
                 else
                 {
                     
-                    print '<h1> <a href = "../menu/menu.php" style = "background-color: white; color: black; margin-left: 40%; display: inline-block; boder: 1px solid black;">Bem vindo ao MART</a></h1>';
+                    include("../menu/barra_usu.php");
                 }
             ?>
             <p id = "area_foto" style = "margin-top: 10%;">
@@ -159,7 +160,7 @@
                         //
                         //$registros["local"];
 
-                        print '<br /><p style = "margin-right: 60%;"><div class = "jumbotron" style = "display: inline-block; margin-left: 3%; margin-right: 60%; width:45%; border: 2px solid black;">'.$registros["descricao"].'</div></p>';
+                        print '<br /><p><div class = "jumbotron" style = "display: inline-block; margin-left: 10%; width:45%; border: 2px solid black;">'.$registros["descricao"].'</div></p>';
                         
                         
                         $SQL_TWO = 'SELECT * FROM publico WHERE evento_id = '.$id_c.';';
@@ -173,7 +174,14 @@
                         $url = $registros["eventos.url"];
 				    }
 				    session_start();
-			    
+			        
+                    print '<div class = "jumbotron" style = "display: inline-block; border: 2px solid black; margin-left: 10%; margin-top: 1%; width:45%;">
+                            <table>
+                                <tr><th>Público:</th><td>'.$publico.' pessoas confirmadas</td></tr>
+                               
+                            </table> 
+
+                           </div>';
 			     
                         
                     }    
@@ -188,7 +196,7 @@
                 $SQL_two = 'SELECT * FROM publico WHERE cliente_id = '.$true.' AND evento_id = '.$repree.';';
                     
                 $query_twoo = mysqli_query($conexao, $SQL_two);
-                print '<div class = "jumbotron" style = "display: inline-block; border: 2px solid black; margin-left: 70%; height: 90%; margin-top: -40%;">';
+                print '<div class = "jumbotron" style = "display: inline-block; border: 2px solid black; margin-left: 60%; margin-top: -250px; height: 90%; vertical-align: text-top;>';
                 if(mysqli_num_rows($query_twoo) > 0) //Se verdadeiro
 			    {
                     
@@ -207,9 +215,17 @@
                 else
                 {
                     print '<section id = "fazendo_logando">
-			                 <button style = "margin-right: 60%; margin-top: 1%;" onclick = "botao('.$true.', '.$id_c.');" class="font-weight-bold  btn btn-outline-dark btn btn-primary" >Participar do evento</button>
+			                 <button style = "margin-right: 10%; margin-top: 1%;" onclick = "botao('.$true.', '.$id_c.');" class="font-weight-bold  btn btn-outline-dark btn btn-primary" data-target="#modalPoll-1" data-toggle="modal">Participar do evento</button>
 			                 <div id = "logado" style = "margin-top: 1%;"></div>
-		                  </section>';
+		                  </section>
+                        ';
+                    if($true == 00)
+                    {
+                        print "<div>";
+                              include ("../inicial/modal_form.php");
+                        print "</div>";
+                    }
+
                 }
                 
             ?>
@@ -218,7 +234,7 @@
                 if($true == 00)
                 {
                     print '
-                                <button style = "margin-left: 60%%;" onclick = "botao_cadastro();" class="font-weight-bold btn btn-outline-dark btn btn-primary">Se cadastrar na aplicação</button>
+                                <a href = "../comum/cadastro.php"><button style = "margin-left: 60%%;" class="font-weight-bold btn btn-outline-dark btn btn-primary">Se cadastrar na aplicação</button></a>
                                 <div id = "area_cadas"></div>
                             
                             ';    

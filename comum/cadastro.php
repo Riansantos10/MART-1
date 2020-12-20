@@ -28,7 +28,7 @@
 	<body>
 		<center><a href = "../inicial/pagina_inicial.php" style = "display: block; background-color: white; border: 1px solid black; font-family: arial; height: 30%;" class = "display-3">Bem vindo ao MART</a></center>
 		
-		<form action = "../comum/processa.php" method = "POST">
+		<form action = "../comum/processa.php" method = "POST" enctype="multipart/form-data">
             <h1>Seja um cliente MART</h1>
 			<label>
 				Nome:
@@ -68,6 +68,21 @@
 			<input type = "radio" name = "editais" value = "Nao" /> Não
 			
 			<br />
+		
+		    <label>
+			    Foto de perfil:
+		    </label>
+		    
+		    <input type="file" name="perfil" accept="image/*" class="form-control form-control-lg"/>
+		    
+		    <br />
+		    
+		    <label>
+			    Foto de capa:
+		    </label>
+		    
+		    <input type="file" name="capa" accept="image/*" class="form-control form-control-lg"/>
+		    
 			<br />
 			
 			<input type = "submit" name = "submeter" value = "Enviar" required class = "btn btn-success btn-block"/>

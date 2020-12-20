@@ -33,8 +33,8 @@
 		
 		if((move_uploaded_file($_FILES['perfil']['tmp_name'], $newName)) AND ((move_uploaded_file($_FILES['capa']['tmp_name'], $newName_two))))
 		{
-			echo '<img src="'.$newName.'" style = "width: 35%;"/> <br />';
-			echo '<img src="'.$newName_two.'" style = "width: 50%;"/>';
+			//echo '<img src="'.$newName.'" style = "width: 35%;"/> <br />';
+			//echo '<img src="'.$newName_two.'" style = "width: 50%;"/>';
 			/*
 			$insert = "UPDATE USERS SET PROFILE_PHOTO = ? WHERE EMAIL like ?";
 			$stmt = Conexao::getConn()->prepare($insert);
@@ -66,6 +66,8 @@
 					VALUES ('$nome', '$sobre', '$mail', '$senha', '$data', '$city', '$edital', '$newName', '$newName_two')";
 	
 	$query = mysqli_query($conexao, $inserindo);
+
+
 	$_SESSION["nome"] = $nome;
 	$_SESSION["sobrenome"] = $sobre;
 	$_SESSION["email"] = $mail;

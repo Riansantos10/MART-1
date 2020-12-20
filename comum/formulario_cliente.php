@@ -8,7 +8,7 @@
 			Nome:
 		</label>
 		
-		<input type = "text" style = "border: 3px solid black;" class="form-control form-control-sm" name = "nome" value = "" required />
+		<input type = "text" style = "border: 3px solid black;" required class = "btn-block" name = "nome" value = ""/>
 		
 		<label>
 			Sobrenome:

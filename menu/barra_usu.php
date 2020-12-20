@@ -1,96 +1,107 @@
 
 
 <?php session_start(); ?>
-<script>
-    function meus_eventos()
-    {
-        //selecionar os eventos que irá comparecer. 
-        $(document).ready(function ()
+<head>
+    <meta charset = "UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function meus_eventos()
         {
-            $.ajax
+            //selecionar os eventos que irá comparecer. 
+            $(document).ready(function ()
+            {
+                $.ajax
+                    ({
+                        url: '../menu/listar_eventos.php',
+                        method: 'POST',
+                        data: {},
+                        success: function(get_back)
+                        {
+                             //$("#eventos").html(get_back);
+                             
+                             $("#lista").html(get_back);
+                             $("#eventos").modal('show');
+                        }
+				    });   
+            });
+        }
+        function acesse(evento_id)
+        {
+            
+            $(document).ready(function ()
+            {	
+                $.ajax
                 ({
-                    url: '../menu/listar_eventos.php',
+                    url: '../inicial/transicao.php',
+                    method: 'POST',
+                    data: {id_evento: evento_id},
+                    success: function(back)
+                    {
+                         
+                         $("#lista_es").html(back);
+                         $("#evento_especi").modal('show');
+                    }
+                });
+            });
+        }
+        function editais()
+        {
+            $(document).ready(function ()
+            {
+                $.ajax
+                ({
+                    url: '../menu/editais_publicados.php',
                     method: 'POST',
                     data: {},
-                    success: function(get_back)
+                    success: function(volta)
                     {
-                         //$("#eventos").html(get_back);
-                         $("#lista").html(get_back);
-                         $("#eventos").modal('show');
+                         $("#eventos").html(volta);
                     }
-				});   
-        });
-    }
-    function acesse(evento_id)
-    {
-        
-        $(document).ready(function ()
-        {	
+                });
+            });
+        }
+       $(document).ready(function(){
+       $("#barra").on("input", function () {
+            var word = $("#barra").val();
             $.ajax
             ({
-                url: '../inicial/transicao.php',
+                url: '../inicial/select.php',
                 method: 'POST',
-                data: {id_evento: evento_id},
-                success: function(back)
+                data: {word: word},
+                success: function(retorno)
                 {
-                     
-                     $("#lista_es").html(back);
-                     $("#evento_especi").modal('show');
+                    if(retorno == "foi")
+                    {
+                        
+                        window.location.href = "../inicial/transicao_com.php";    
+                        
+                    }
+                    else
+                    {
+                        $("#pes").html(retorno);    
+                    }
+
+
+
                 }
+
             });
-        });
-    }
-    function editais()
-    {
-        $(document).ready(function ()
-        {
-            $.ajax
-            ({
-                url: '../menu/editais_publicados.php',
-                method: 'POST',
-                data: {},
-                success: function(volta)
-                {
-                     $("#eventos").html(volta);
-                }
-            });
-        });
-    }
-   $(document).ready(function(){
-   $("#barra").on("input", function () {
-        var word = $("#barra").val();
-        $.ajax
-        ({
-            url: '../inicial/select.php',
-            method: 'POST',
-            data: {word: word},
-            success: function(retorno)
-            {
-                if(retorno == "foi")
-                {
-                    
-                    window.location.href = "../inicial/transicao_com.php";    
-                    
-                }
-                else
-                {
-                    $("#pes").html(retorno);    
-                }
-
-
-
-            }
-
         });
     });
-});
-    
-</script>
+        
+    </script>
+</head>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-static-top" style = "background-color: black;">
+<nav class="navbar navbar-expand-sm navbar-dark navbar-static-top fixed-top" style = "background-color: red;">
     <a class="navbar-brand" href="../menu/menu.php"> <?php echo '<img src="'.$_SESSION["perfil"].'" style = "width: 5%; min-width: 25%; max-height: 80px; min-height: 80px;"/>     '; print "  Bem vindo á MART,".$_SESSION['nome'].""; ?></a>
     <ul>
         <li>
+            <a href = "../menu/menu.php" style = "margin-left: 50%;"><img src = "../logoti.png" style = " height: 50px;"/></a>
             <form class="form-inline my-2 my-lg-0" style = "margin-left: 30%;">
                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 700px;">
                         

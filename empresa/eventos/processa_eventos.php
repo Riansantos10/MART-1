@@ -63,9 +63,9 @@
 
 
             $SQL = "INSERT INTO eventos
-                         (nome, descricao, local, data_horario, cnpj_empresa, url, perfil_evento, capa_evento)
+                         (nome, descricao, cidade, local, data_horario, cnpj_empresa, url, perfil_evento, capa_evento)
                     VALUES
-                        ('".$_POST['nome']."', '".$_POST['descricao']."', '".$_POST['endereco']."', '".$_POST['data_hora']."', ".$_POST['cnpj'].", '".$_POST['url']."', '".$newName."', '".$newName_two."');
+                        ('".$_POST['nome']."', '".$_POST['descricao']."',  '".$_POST['cidade']."', '".$_POST['endereco']."', '".$_POST['data_hora']."', ".$_POST['cnpj'].", '".$_POST['url']."', '".$newName."', '".$newName_two."');
                     ";
             $query = mysqli_query($conexao, $SQL);
 

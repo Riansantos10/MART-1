@@ -26,7 +26,26 @@
                          $("#modal_repre").modal('show');
                     }
 				});
-			}
+            }
+            $(document).ready(function()
+            {
+                $("#table").on("input", function ()
+                {
+                    var word_two = $("#table").val();
+                    $.ajax
+                    ({
+                        url: '../inicial/select_two.php',
+                        method: "POST",
+                        data: {word_two: word_two},
+                        success: function(retorna)
+                        {
+                            
+                            $("#area_alvo").html(retorna);    
+                            
+                        }
+                    });
+                })
+            });
 		</script>
         
     
@@ -34,17 +53,22 @@
     <body class =  ".display-3">
         
         <?php include("barra_usu.php") ?>
-        <center class = "jumbotron">
-		    <h1 href = "pagina_inicial.php" class = "display-3" style = "background-color: black; color: white;margin-left: 25%; margin-right: 25%; margin-top: 5%; padding: 2.5%;">Bem vindo ao MART</h1>
-            <h2>ACOMPANHE OS EVENTOS QUE RODAM A SUA REGIÃO</h2>
+        <center style = "margin-top: 5%;">
+		    <a href = "../menu/menu.php" style = "margin-left: 25%; margin-right: 25%; padding: 2.5%;"><img src = "../mart.png" style = "margin-top: 5%;"/></a>
+            <h2 style = "margin-bottom: 5%;">ACOMPANHE OS EVENTOS QUE RODAM A SUA REGIÃO</h2>
         </center>
-        <section class = "area_eventos">
-			<h2>ACOMPANHE OS EVENTOS QUE RODAM A SUA REGIÃO</h2>
+        <section class = "area_eventos" style = "margin-top: 5%; margin-left: 10%; margin-right: 10%;">
 
             <div>
                 <?php include("../inicial/slides.php"); ?>
         
             </div>
+         </section>
+
+        <section class = "jumbotron" style = "margin-left: 10%; margin-right: 10%; margin-top: 5%;">
+            <input type = "search" class="form-control mr-sm-2" style = "width: 100%; height: 35px; border-radius: 6px; border: none; border-bottom: 5px solid black;" placeholder="Digite o nome da cidade ou o nome do evento" id = "table"/> <!--Pesquisar o nome do evento -->
+            
+            <hr />
 			<?php
 				include("../base_de_dados/conexao.php");
 
@@ -57,11 +81,11 @@
                 
 				if(mysqli_num_rows($query) > 0) //Se verdadeiro
 				{
-                    print '<div class="row">';
+                    print '<div class="row" id = "area_alvo">';
 					while($registros = mysqli_fetch_assoc($query))
 					{
 
-                        print '<div class="card" style="width: 18%; margin: 25px 50px 75px 100px; background-color: black;">
+                        print '<div class="card" style="width: 20%; margin: 50px 0px 10px 50px; background-color: black;">
                                     <img class="card-img-top" src= "../empresa/eventos/'.$registros["perfil_evento"].'" alt="Card image cap" style = "min-width: 20%; max-height: 300px; min-height: 300px;">
                                     <div class="card-body" style = "color: white;">
                                         <h5 class="card-title">'.$registros["nome"].'</h5>
