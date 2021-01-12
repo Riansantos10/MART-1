@@ -63,11 +63,11 @@
                 <button class = "navbar-toggler" data-toggle = "collapse" data-target = "#collapse_target">
                     <span class = "navbar-toggler-icon"></span>
                 </button>
-                <div class = "collapse navbar-collapse" id = "collapse_target">
-                    <section class = "area_login">
+                
+                    <section class = "area_login collapse navbar-collapse" id = "collapse_target">
                         <ul class="navbar-nav">
                              <ul class="nav justify-content-end">
-                                <section id = "login">
+                                <a id = "login">
                                     <li class="nav-item">
                                       <a class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 12px 5px 0px;" id = "click_login" data-target="#modalPoll-1" data-toggle="modal"> <button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Login</button></a>
                                     </li>
@@ -75,24 +75,22 @@
                                         <?php include ("../inicial/modal_form.php")?>
                                     </div>
 
-                                </section>
-
-
-                                 <section id = "comum">
+                                </a>
+                                 <a id = "comum">
                                      <li class="nav-item">
                                         <a id = "click_comum" class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 10px 5px 0px; text-decoration: none;" href = "../comum/cadastro.php"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Realizar cadastro comum</button></a>
                                     </li>
-                                </section>
+                                </a>
 
-                                <section>
+                                <a>
                                     <li class="nav-item">
                                       <a class="nav-link font-weight-bold btn btn-light btn btn-outline-dark" id = "click_empre" style = "text-decoration: none; margin: 0px 10px 5px 0px;" href = "../empresa/form_empre.php"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Realizar cadastro empresarial</button></a>
                                      </li>
-                                </section>
+                                </a>
                             </ul>
                         </ul>
                     </section>
-                </div>
+                
                 <a href = "pagina_inicial.php" style = "margin-left: 8%;">
                     <img src = "../logoti.png" style = "height: 50px; margin-left: 10%; "/>
                 </a>
