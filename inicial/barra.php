@@ -76,17 +76,17 @@
                         <li class="nav-item" style = "text-decoration: none; margin-right: 2%;"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">
                             <a id = "click_comum" class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" href = "../comum/cadastro.php">Realizar cadastro comum</button></a>
                         </li>
-                        <li class="nav-item" style = "text-decoration: none; margin-right: 4%;"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">
+                        <li class="nav-item" style = "text-decoration: none; margin-right: 6%;"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">
                           <a href = "../empresa/form_empre.php" class="nav-link font-weight-bold btn btn-light btn btn-outline-dark" id = "click_empre">Realizar cadastro empresarial</button></a>
                         </li>
                         
-                        <li class = "nav-item" style = "margin-left: 0%;">
+                        <li class = "nav-item" style = "margin-right: 10%;">
                             <a href = "../inicial/pagina_inicial.php" class = "nav-link">
                                 <img src = "../logoti.png" style = "height: 50px; margin-left: 10%; "/>
                             </a>
                         </li>
                       <!--barra de pesquisa-->
-                        <li class = "nav-item" style = "margin-left: 0%;"> 
+                        <li class = "nav-item"> 
                             <form class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 450px; display: inline-block; border-bottom: 8px solid black;">
 
