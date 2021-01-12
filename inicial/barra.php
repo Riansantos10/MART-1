@@ -60,7 +60,7 @@
 </head>
 <div>
             <nav class="navbar navbar-expand-sm navbar-red navbar-static-top fixed-top navbar-light" style = "background-color: red; man-height: 1%; min-height: 1%;">
-                <button class = "navbar-toggler" data-toggle = "collapse" data-target = "collapse_target">
+                <button class = "navbar-toggler" data-toggle = "collapse" data-target = "#collapse_target">
                     <span class = "navbar-toggler-icon"></span>
                 </button>
                 <div class = "collapse navbar-collapse" id = "collapse_target">
