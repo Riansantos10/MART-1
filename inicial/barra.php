@@ -79,14 +79,14 @@
                           <a class="nav-link font-weight-bold btn btn-light btn btn-outline-dark" id = "click_empre">Realizar cadastro empresarial</button></a>
                         </li>
                         
-                        <li class = "nav-item">
-                            <a href = "pagina_inicial.php" style = "margin-left: 15%;" class = "nav-link">
+                        <li class = "nav-item" style = "margin-left: 15%;">
+                            <a href = "pagina_inicial.php" class = "nav-link">
                                 <img src = "../logoti.png" style = "height: 50px; margin-left: 10%; "/>
                             </a>
                         </li>
                       <!--barra de pesquisa-->
-                        <li class = "nav-item"> 
-                            <form class="form-inline my-2 my-lg-0" style = "margin-left: 20%;">
+                        <li class = "nav-item" style = "margin-left: 20%;"> 
+                            <form class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 450px; display: inline-block; border-bottom: 8px solid black;">
 
                                 <datalist id = "pes">
