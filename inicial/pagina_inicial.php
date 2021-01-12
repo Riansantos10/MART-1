@@ -92,7 +92,7 @@
             <?php include("../inicial/barra.php"); ?>
         </div>
         <center>
-		    <a href = "pagina_inicial.php" style = "margin-left: 25%; margin-right: 25%; margin-top: 30%; padding: 2.5%;"><img src = "../mart.png" style = "margin-top: 5%;"/></a>
+		    <a href = "pagina_inicial.php" style = "margin-left: 25%; margin-right: 25%; margin-top: 40%; padding: 2.5%;"><img src = "../mart.png" style = "margin-top: 5%;"/></a>
             <h2 style = "font-family: arial;">ACOMPANHE OS EVENTOS QUE RODAM A SUA REGIÃO</h2>
 
         </center>
