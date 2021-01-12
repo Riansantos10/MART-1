@@ -76,11 +76,11 @@
                         <li class="nav-item" style = "text-decoration: none; margin-right: 2%;">
                             <a style = "background-color: white; border: none; color: black; padding: 8px 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;" id = "click_comum" class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" href = "../comum/cadastro.php">Realizar cadastro comum</button></a>
                         </li>
-                        <li class="nav-item" style = "text-decoration: none; margin-right: 30%;">
+                        <li class="nav-item" style = "text-decoration: none; margin-right: 34%;">
                           <a href = "../empresa/form_empre.php" class="nav-link font-weight-bold btn btn-light btn btn-outline-dark" id = "click_empre" style = "background-color: white; border: none; color: black; padding: 8px 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Realizar cadastro empresarial</a>
                         </li>
                         
-                        <li class = "nav-item" style = "margin-right: 44%;">
+                        <li class = "nav-item" style = "margin-right: 35%;">
                             <a href = "../inicial/pagina_inicial.php" class = "nav-link">
                                 <img src = "../logoti.png" style = "height: 50px; margin-left: 10%; "/>
                             </a>
