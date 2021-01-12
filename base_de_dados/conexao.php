@@ -3,7 +3,7 @@
 	//Conectar com o software de banco de dados
 	//MySQL
 	
-	$conexao = mysqli_connect("localhost", "root", "");
+	/*$conexao = mysqli_connect("localhost", "root", "");
 
 	if(!$conexao)
 	{
@@ -23,8 +23,11 @@
 		print "Erro";
 		print mysqli_error($db)."<br>";
 		exit();
-	}
+	}*/
 
-	
+	$conexao = @mysqli_connect("db4free.net:3306", "jarvis_ifsp", "rn123456789", "marteven")
+			or die("Erro ao abrir");
+			
+	mysqli_set_charset($conexao, "utf8");
 	
 ?>
