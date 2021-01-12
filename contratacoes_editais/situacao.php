@@ -29,7 +29,7 @@
             }
             else if($situa == 2)
             {
-                print "Negociação realizada com sucesso. Entrar em contato para resolver todos os outros detalhes da negociação.";
+                print "<center>Negociação realizada com sucesso. Entrar em contato para resolver todos os outros detalhes da negociação.</center>";
                 
                 $cnpj_itine = $registros['grupos_itinerantes_contratado'];
                 
@@ -46,7 +46,7 @@
                 {
                     while($registro = mysqli_fetch_assoc($query_two))
                     {
-                        print '<br />Grupo:'.$registro["nome_empresa"].' - E-mail: '.$registro["email"].'. Mande um email!';
+                        print '<br /><center>Grupo:'.$registro["nome_empresa"].' - E-mail: '.$registro["email"].'. Mande um email!</center>';
                     }
                 }
 

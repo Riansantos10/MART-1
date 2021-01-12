@@ -60,12 +60,13 @@
 
     $inserindo = "INSERT INTO empresa
 						(cnpj, nome_empresa, email, senha, localizacao, cidade, tipos_eventos, foto_empresa, capa_empresa)
-                    VALUES ($cnpj, '$nome' , '$email', $senha, '$localizacao', '$cidade', '$tipos', '$newName', '$newName_two')";
-    var_dump($inserindo);
+                    VALUES ($cnpj, '$nome' , '$email', '$senha', '$localizacao', '$cidade', '$tipos', '$newName', '$newName_two')";
+
     $query = mysqli_query($conexao, $inserindo);
-    
+    print $inserindo;
     if($localizacao == "Itinerante")
     {
+        //print "Entrou aquiiii";
 		$iti = "INSERT INTO grupos_itinerantes
 						(cnpj_itine, nome)
                     VALUES($cnpj, '$nome')";

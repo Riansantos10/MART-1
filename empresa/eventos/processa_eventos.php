@@ -83,9 +83,9 @@
 
 
                 $_SESSION["id_evento"] = $last_id;
-                print $_SESSION["id_evento"];
+                //print $_SESSION["id_evento"];
 
-                print '<a class = "display-4">Evento cadastrado com sucesso!<br /> Página do evento </a>';
+                print '<a class = "display-4">Evento cadastrado com sucesso!<br /> </a><br />';
                 print '<a href = "../puxador.php" class = "display-4">Página do evento!</a>';
 
             }

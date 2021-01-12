@@ -194,7 +194,7 @@
                                 success: function(get_back)
                                 {
                                     $("body").html(get_back);
-                                    window.location.reload();
+                                    window.location.href = "../menu_empresa/menu.php";
                                 }
                             });
                     }
@@ -205,93 +205,95 @@
     </head>
     <body>
         <?php
-           $_SESSION["id_evento"] = $_POST["id_evento"];
-            include("../menu_empresa/barra_one.php");
+
+            include("../menu_empresa/barra.php");
             print '<h1 class = "display-3">Informações sobre seu próprio evento</h1>';
+            
             include("../base_de_dados/conexao.php");
 
         ?>
+        <div  id = "area">
+            <p id = "area_foto" style = "margin-bottom: 35%; margin-top: 5%;">
+                <hr style = "border: 4px solid black;" />
+                <?php 
+                    include("../empresa/eventos/foto_evento_perfil_dom.php");
+                ?>
+            </p>
+                
+            <?php
 
-        <p id = "area_foto" style = "margin-bottom: 25%;">
-            <?php 
-                include("../empresa/eventos/foto_evento_perfil.php");
-            ?>
-        </p>
-        <?php
+                
+                $sessao_exclu = $_POST["id_evento"];
+               
+                //print $_SESSION["id_evento"];
 
-            
-            $sessao_exclu = $_POST["id_evento"];
-           
-            //print $_SESSION["id_evento"];
-
-            //print $_POST["id_evento"];
-            include("../base_de_dados/conexao.php");
-
-
-            $SQL = 'SELECT
-                         nome, descricao, local, data_horario, url
-                    FROM
-                        eventos
-                    WHERE
-                        id_evento = '.$_POST["id_evento"].';';
-
-            $query = mysqli_query($conexao, $SQL);
-            //print $SQL;
-
-            print '<style rel="stylesheet" type="text/css">
-                        .imagem{
-                           background: url(lapis.png);
-                           width: 46px;
-                            height: 44px;
-                        }
+                //print $_POST["id_evento"];
+                include("../base_de_dados/conexao.php");
 
 
+                $SQL = 'SELECT
+                             nome, descricao, local, data_horario, url
+                        FROM
+                            eventos
+                        WHERE
+                            id_evento = '.$_SESSION["id_evento"].';';
 
-                </style>';
+                $query = mysqli_query($conexao, $SQL);
+                //print $SQL;
 
-            print '';
+                print '<style rel="stylesheet" type="text/css">
+                            .imagem{
+                               background: url(lapis.png);
+                               width: 46px;
+                                height: 44px;
+                                
+                            }
 
 
-            if(mysqli_num_rows($query) > 0) //Se verdadeiro
-            {
 
-                print '<table class="table table-hover">';
-                print '<thead>
-                  <tr>
-                    <th>Nome do evento</th>
-                    <th></th>
-                    <th>Descrição</th>
-                    <th></th>
-                    <th>Local</th>
-                    <th></th>
-                    <th>data_horario</th>
-                    <th></th>
-                    <th>url</th>
-                    <th></th>
-                  </tr>
-                </thead>';
-                while($registros = mysqli_fetch_assoc($query))
+                    </style>';
+
+                if(mysqli_num_rows($query) > 0) //Se verdadeiro
                 {
-                    print '<tr>';
-                    print '<td><a id = "um">'.$registros["nome"].'</a></td><td onClick = "altera_campo(1);" id = "1" val = "1"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td>';
-                    print '<td><a id = "dois">'.$registros["descricao"].'</a></td><td onClick = "altera_campo(2);" id = "2"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td>';
-                    print '<td><a id = "tres">'.$registros["local"].'</a></td><td onClick = "altera_campo(3);" id = "3"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td>';
-                    print '<td><a id = "quatro">'.$registros["data_horario"].'</a></td><td onClick = "altera_campo(4);" id = "4"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td>';
-                    print '<td><a id = "cinco">'.$registros["url"].'</a></td><td onClick = "altera_campo(5);" id = "5"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td></tr>';
+
+                    print '<table class="table table-hover">';
+                    print '<thead>
+                      <tr>
+                        <th>Nome do evento</th>
+                        <th></th>
+                        <th>Descrição</th>
+                        <th></th>
+                        <th>Local</th>
+                        <th></th>
+                        <th>data_horario</th>
+                        <th></th>
+                        <th>url</th>
+                        <th></th>
+                      </tr>
+                    </thead>';
+                    while($registros = mysqli_fetch_assoc($query))
+                    {
+                        print '<tr>';
+                        print '<td><a id = "um">'.$registros["nome"].'</a></td><td onClick = "altera_campo(1);" id = "1" val = "1"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td>';
+                        print '<td><a id = "dois">'.$registros["descricao"].'</a></td><td onClick = "altera_campo(2);" id = "2"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td>';
+                        print '<td><a id = "tres">'.$registros["local"].'</a></td><td onClick = "altera_campo(3);" id = "3"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td>';
+                        print '<td><a id = "quatro">'.$registros["data_horario"].'</a></td><td onClick = "altera_campo(4);" id = "4"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td>';
+                        print '<td><a id = "cinco">'.$registros["url"].'</a></td><td onClick = "altera_campo(5);" id = "5"><img src="lapis.png" widht = "3.5%" height = "3.5%"/></td></tr>';
+
+                    }
+                    print "</table><br />";
+
+                    print '<a href = "../contratacoes_editais/menu_negociacao.php"><button class="btn btn-dark" style = "margin-left: 2%;">Realizar contratação de artistas para este evento</button></a>';
 
                 }
-                print "</table>";
+                  
+            ?>
+            
 
-                print '<a href = "../contratacoes_editais/menu_negociacao.php"><button class="btn btn-dark">Realizar contratação de artistas para este evento</button></a>';
+            
+            <?php print '<button  onclick = "excluir('.$sessao_exclu.');" class="btn btn-dark" style = "margin-left: 2%;">Excluir evento</button>'; ?>
 
-            }
-        ?>
-        
-        <br />
-        
-        <?php print '<button  onclick = "excluir('.$sessao_exclu.');">Excluir evento</button>'; ?>
-
-    
+        </div>    <br />
     
     </body>
 

@@ -36,4 +36,6 @@
         
     }
 
+    mysqli_close($conexao);
+
 ?>

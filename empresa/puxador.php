@@ -6,7 +6,18 @@
 		<title>Bem vindo ao MART</title>
 		<meta charset = "UTF-8" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+            $(document).ready(function ()
+            {
+                puxando();
+                function puxando()
+                {
+                window.location.href = "../menu_empresa/perfil_evento.php";    
+                 }        
+            });
+
+
+        </script>
 	</head>
 	
 	<body class =  ".display-3">
@@ -53,7 +64,8 @@
                 print "<br/>";
                 print "<br/>";
 
-                print '<br /><a href = "../menu_empresa/menu.php">Voltar para o menu</a>';
+                print '<br /><a href = "../menu_empresa/perfil_evento.php">Ir para o perfil do evento</a>';
+
             }
             else
             {

@@ -12,9 +12,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src = "menu_empresa.js"></script>
         <script>
-            function listar()
+            $(document).ready(function ()
             {
-                $(document).ready(function ()
+                $("#listar").click(function()
                 {
                     $.ajax
                     ({
@@ -27,7 +27,11 @@
                         }
                     });
                 });
-            }
+
+                
+            });            
+
+
             function editar(id_evento)
             {
                 $(document).ready(function()
@@ -35,12 +39,13 @@
                     
                     $.ajax
                     ({
-                        url: "perfil_evento.php",
+                        url: "auto.php",
                         method: "POST",
                         data: {id_evento: id_evento},
                         success: function(get_back)
                         {
-                            $("body").html(get_back);
+                            window.location.href = "perfil_evento.php";
+                            //$("body").html(get_back);
 
                         }
                     });    
@@ -59,7 +64,7 @@
         
         <section id = "area">
             <center>
-		    <a href = "pagina_inicial.php" style = "margin-botton: 5%; margin-left: 25%; margin-right: 25%; margin-top: 30%; padding: 2.5%;"><img src = "../mart.png"/></a>
+		    <a href = "menu.php" style = "margin-botton: 5%; margin-left: 25%; margin-right: 25%; margin-top: 30%; padding: 2.5%;"><img src = "../mart.png"/></a>
 
         </center>
             

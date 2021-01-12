@@ -60,7 +60,8 @@
                     data: {},
                     success: function(volta)
                     {
-                         $("#eventos").html(volta);
+                         $("#edital").html(volta);
+                         $("#edi").modal('show');
                     }
                 });
             });
@@ -98,12 +99,12 @@
 </head>
 
 <nav class="navbar navbar-expand-sm navbar-dark navbar-static-top fixed-top" style = "background-color: red;">
-    <a class="navbar-brand" href="../menu/menu.php"> <?php echo '<img src="'.$_SESSION["perfil"].'" style = "width: 5%; min-width: 25%; max-height: 80px; min-height: 80px;"/>     '; print "  Bem vindo á MART,".$_SESSION['nome'].""; ?></a>
+    <a class="navbar-brand" href="../menu/perfil_usua.php"> <?php echo '<img src="'.$_SESSION["perfil"].'" style = "width: 5%; min-width: 25%; max-height: 80px; min-height: 80px;"/>     '; print "  Bem vindo á MART,".$_SESSION['nome'].""; ?></a>
     <ul>
         <li>
             <a href = "../menu/menu.php" style = "margin-left: 50%;"><img src = "../logoti.png" style = " height: 50px;"/></a>
             <form class="form-inline my-2 my-lg-0" style = "margin-left: 30%;">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 700px;">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 700px;display: block-inline; border-bottom: 4px solid black;">
                         
                 <datalist id = "pes">
 
@@ -112,15 +113,15 @@
             </form>
         </li>
     </ul>
-      <ul class="navbar-nav" style = "margin-left: 250px; color: white;">
+      <ul class="navbar-nav" style = "margin-left: 180px; color: white;">
         <li class="nav-item">
-          <a class="nav-link" onClick = "meus_eventos();" data-target="#eventos" style = "color: white;">Eventos marcados</a>
+          <a class="nav-link" onClick = "meus_eventos();" data-target="#eventos" style = "color: white; border-bottom: 6px solid black;">Eventos marcados</a>
         </li>
           <?php
                 if ($_SESSION['editais_s_n'] == "Sim")
                 {
                     print '<li class="nav-item">
-                        <a class="nav-link" onClick = "editais();" style = "color: white;">Editais publicados.</a>
+                        <a class="nav-link" onClick = "editais();" style = "color: white; border-bottom: 6px solid black;" data-target="#editais">Editais publicados.</a>
                     </li>';    
                 }
                 
@@ -128,7 +129,7 @@
         <p class="text-right"></p>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link" href = "../menu/logout.php" style = "color: white;">Logout</a>
+                <a class="nav-link" href = "../menu/logout.php" style = "color: white; border-bottom: 6px solid black; height: 65px;">Logout</a>
             </li>
           </ul>
         </ul>
@@ -138,7 +139,7 @@
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title" id = "nome_evento">Lista de evento</h4>
+                        <h4 class="modal-title" id = "nome_evento">Lista de eventos</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -164,7 +165,7 @@
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title" id = "nome_evento">Lista de evento</h4>
+                        <h4 class="modal-title" id = "nome_edital">Detalhes do evento</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -181,6 +182,33 @@
                 </div>
             </div>
         </div>
+
+
+    </div>
+
+    <div class = "modal fade bd-example-modal-lg" id = "edi" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id = "nome_edital">Lista de editais</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <a id = "edital"></a>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
 
     </div>
 

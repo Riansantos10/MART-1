@@ -49,10 +49,12 @@
            
 		    while($registro = mysqli_fetch_assoc($query))
 		    {
+                if($registro["data_horario"] >= date("Y-m-d H:i:s"))
+                {
                
 
-                print '<option value = "'.$registro['nome'].'">'.$registro['data_horario'].'</option>';
-
+                    print '<option value = "'.$registro['nome'].'">'.$registro['data_horario'].'</option>';
+                }
                 
                 
             }

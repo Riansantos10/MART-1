@@ -2,8 +2,8 @@
 
     session_start();
 
-
-    echo '<form action = "../empresa/eventos/processa_eventos.php" method = "POST" class="form" enctype="multipart/form-data">
+    echo '<center><div class = "jumbotron display-2">Organize seu evento!</div></center>';
+    echo '<form action = "../empresa/eventos/processa_eventos.php" method = "POST" class="form" enctype="multipart/form-data" style = "display: inline-block; border-radius: 5%; border: 3px solid red; padding: 5%; margin-left: 30%; margin-top: 2%; margin-bottom: 3%;">
             <label>
                 Nome do evento:
             </label>

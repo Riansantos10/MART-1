@@ -3,8 +3,8 @@
 
     include("../base_de_dados/conexao.php");
 
-    $id = $_POST["id_excludente"];
     session_start();
+    $id = $_SESSION["id_evento"];
 
     $cnpj = $_SESSION["cnpj"];
 
@@ -12,7 +12,7 @@
 
     $query = mysqli_query($conexao, $SQL);
 
-    //print $SQL;
+
 
     mysqli_close($conexao);
 

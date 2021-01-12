@@ -123,7 +123,7 @@
                     include("../menu/barra_usu.php");
                 }
             ?>
-            <p id = "area_foto" style = "margin-top: 10%;">
+            <p id = "area_foto" style = "margin-bottom: 50%;">
                 <?php 
                     include("../empresa/eventos/foto_evento_perfil.php");
                     
@@ -135,7 +135,7 @@
 
             ?>
 
-            <div style = "margin-top: 30%;">
+            <div>
 
             <?php
 			    $SQL = 'SELECT
@@ -152,15 +152,11 @@
 				    
 				    while($registros = mysqli_fetch_assoc($query))
 				    {
-                        print '<hr style = "border: 10px solid black; background-color: black;"/>';
-                        print '<h1 class = "display-1" style = "letter-spacing: 3px; font-family: arial"><span style="font-weight:bold; margin-left: 30%; height: 400px;">'.$registros["nome"].'</span></h1>';
-                        print '<a style = "font-family: arial; margin-left: 40%;"><img src = "../inicial/icons.png" height = "25px" widht = "25px" style = "margin-right: 2%;">'.$registros["data_horario"].'</a>';
-                        print '<br><a style = "font-family: arial; margin-left: 40%;"><img src = "../inicial/globo.png" height = "25px" widht = "25px" style = "margin-right: 2%;">'.$registros["local"].'</a>';
 
                         //
                         //$registros["local"];
 
-                        print '<br /><p><div class = "jumbotron" style = "display: inline-block; margin-left: 10%; width:45%; border: 2px solid black;">'.$registros["descricao"].'</div></p>';
+                        print '<br /><p><div class = "jumbotron" style = "display: inline-block; margin-left: 10%; width:45%; border-top: 8px solid black;">'.$registros["descricao"].'</div></p>';
                         
                         
                         $SQL_TWO = 'SELECT * FROM publico WHERE evento_id = '.$id_c.';';
@@ -175,7 +171,7 @@
 				    }
 				    session_start();
 			        
-                    print '<div class = "jumbotron" style = "display: inline-block; border: 2px solid black; margin-left: 10%; margin-top: 1%; width:45%;">
+                    print '<div class = "jumbotron" style = "display: inline-block; border-top: 8px solid black; margin-left: 10%; margin-top: 1%; width:45%;">
                             <table>
                                 <tr><th>Público:</th><td>'.$publico.' pessoas confirmadas</td></tr>
                                
@@ -196,19 +192,20 @@
                 $SQL_two = 'SELECT * FROM publico WHERE cliente_id = '.$true.' AND evento_id = '.$repree.';';
                     
                 $query_twoo = mysqli_query($conexao, $SQL_two);
-                print '<div class = "jumbotron" style = "display: inline-block; border: 2px solid black; margin-left: 60%; margin-top: -250px; height: 90%; vertical-align: text-top;>';
+                print '<div class = "jumbotron" style = "display: inline-block; border-top: 8px solid black; margin-left: 60%; margin-top: -250px; height: 90%; vertical-align: text-top;>';
                 if(mysqli_num_rows($query_twoo) > 0) //Se verdadeiro
 			    {
                     
                     
                     $data_atual = date('y/m/d H:i:s');
-                    if($data_evento >= $data_atual)
+                    if($data_evento == $data_atual)
                     {
-                        print '<br /><button class = "btn btn-primary" style = "margin-left: 2%;" onclick = url("'.$url.'");>Entrar na sala do evento!</button>';
+                        print '<br /><button class = "font-weight-bold btn btn-outline-dark btn btn-primary" style = "margin-left: 2%;" onclick = url("'.$url.'");>Entrar na sala do evento!</button>'; 
+                        
                     }
 
                     print '<section id = "fazendo_logando">
-			                 <button style = "margin-left: 2%; margin-top: 1%;" onclick = "sair('.$true.', '.$id_c.');" class="font-weight-bold btn btn-outline-dark btn btn-primary" >Deixar evento</button>
+			                 <button style = "margin-left: 2%; margin-top: 1%;" onclick = "sair('.$true.', '.$id_c.');" class="font-weight-bold btn btn-outline-dark btn btn-primary">Deixar evento</button>
 			                 <div id = "logado" style = "margin-top: 10%;"></div>
 		                  </section>';
                 }

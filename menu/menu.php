@@ -53,9 +53,10 @@
     <body class =  ".display-3">
         
         <?php include("barra_usu.php") ?>
-        <center style = "margin-top: 5%;">
+        <center style = "margin-top: 5%;" >
 		    <a href = "../menu/menu.php" style = "margin-left: 25%; margin-right: 25%; padding: 2.5%;"><img src = "../mart.png" style = "margin-top: 5%;"/></a>
             <h2 style = "margin-bottom: 5%;">ACOMPANHE OS EVENTOS QUE RODAM A SUA REGIÃO</h2>
+            <hr style = "border: 8px solid black; background-color: black;" />
         </center>
         <section class = "area_eventos" style = "margin-top: 5%; margin-left: 10%; margin-right: 10%;">
 
@@ -84,6 +85,8 @@
                     print '<div class="row" id = "area_alvo">';
 					while($registros = mysqli_fetch_assoc($query))
 					{
+                        if($registros["data_horario"] >= date("Y-m-d H:i:s"))
+                        {
 
                         print '<div class="card" style="width: 20%; margin: 50px 0px 10px 50px; background-color: black;">
                                     <img class="card-img-top" src= "../empresa/eventos/'.$registros["perfil_evento"].'" alt="Card image cap" style = "min-width: 20%; max-height: 300px; min-height: 300px;">
@@ -127,6 +130,7 @@
                         </div>
 			            </div>
                             ';
+                        }
 					};
 					
                 };

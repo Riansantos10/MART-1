@@ -65,7 +65,7 @@
                          <ul class="nav justify-content-end">
                             <section id = "login">
                                 <li class="nav-item">
-                                  <a class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 12px 5px 0px;" id = "click_login" data-target="#modalPoll-1" data-toggle="modal">Login</a>
+                                  <a class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 12px 5px 0px;" id = "click_login" data-target="#modalPoll-1" data-toggle="modal"> <button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Login</button></a>
                                 </li>
                                 <div>
                                     <?php include ("../inicial/modal_form.php")?>
@@ -76,13 +76,13 @@
 
                              <section id = "comum">
                                  <li class="nav-item">
-                                    <a id = "click_comum" class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 10px 5px 0px; text-decoration: none;" href = "../comum/cadastro.php">Realizar cadastro comum</a>
+                                    <a id = "click_comum" class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 10px 5px 0px; text-decoration: none;" href = "../comum/cadastro.php"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Realizar cadastro comum</button></a>
                                 </li>
                             </section>
                             
                             <section>
                                 <li class="nav-item">
-                                  <a class="nav-link font-weight-bold btn btn-light btn btn-outline-dark" id = "click_empre" style = "text-decoration: none; margin: 0px 10px 5px 0px;" href = "../empresa/form_empre.php">Realizar cadastro empresarial</a>
+                                  <a class="nav-link font-weight-bold btn btn-light btn btn-outline-dark" id = "click_empre" style = "text-decoration: none; margin: 0px 10px 5px 0px;" href = "../empresa/form_empre.php"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Realizar cadastro empresarial</button></a>
                                  </li>
                             </section>
                         </ul>
@@ -94,7 +94,7 @@
             <!--barra de pesquisa-->
 
          <form class="form-inline my-2 my-lg-0" style = "margin-left: 16%;">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 450px;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 450px; display: inline-block; border-bottom: 8px solid black;">
             
             <datalist id = "pes">
 

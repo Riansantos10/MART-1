@@ -81,7 +81,8 @@
 
             if(mysqli_num_rows($query) > 0) //Se verdadeiro
             {
-                print "<table>";
+                print '<center class = "display-1">Notificações</center>';
+                print '<table class="table table-hover table-bordered">';
                 print "<tr>";
                 print '<td>Nome do evento:</td>';
                 print '<td>Data do evento:</td>';

@@ -14,7 +14,7 @@
 		while($registros = mysqli_fetch_assoc($query))
 		{
 
-            if($registros["data_horario"] > date("Y-m-d H:i:s"))
+            if($registros["data_horario"] >= date("Y-m-d H:i:s"))
             {
                 $repre[$count] = $registros["capa_evento"];
 
