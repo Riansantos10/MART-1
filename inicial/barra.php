@@ -66,17 +66,17 @@
                 
                 <div class = "collapse navbar-collapse" id = "collapse_target">
                      <ul class="navbar-nav">
-                        <li class="nav-item" id = "login" style = "margin-right: 4%;">
+                        <li class="nav-item" id = "login" style = "margin-right: 2%;">
                             <a class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" id = "click_login" data-target="#modalPoll-1" data-toggle="modal"> <button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Login</button></a>
                              <div>
                                 <?php include ("../inicial/modal_form.php"); ?>
                             </div>
                         </li>
                          
-                        <li class="nav-item" style = "text-decoration: none;"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">
+                        <li class="nav-item" style = "text-decoration: none; margin-right: 2%;"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">
                             <a id = "click_comum" class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" href = "../comum/cadastro.php">Realizar cadastro comum</button></a>
                         </li>
-                        <li class="nav-item" style = "text-decoration: none;"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">
+                        <li class="nav-item" style = "text-decoration: none; margin-right: 4%;"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">
                           <a href = "../empresa/form_empre.php" class="nav-link font-weight-bold btn btn-light btn btn-outline-dark" id = "click_empre">Realizar cadastro empresarial</button></a>
                         </li>
                         
