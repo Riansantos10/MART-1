@@ -86,14 +86,16 @@
                     <img src = "../logoti.png" style = "height: 50px; margin-left: 10%; "/>
                 </a>
             <!--barra de pesquisa-->
+            
+             <div class = "collapse navbar-collapse" id = "collapse_target">
+                <form class="form-inline my-2 my-lg-0" style = "margin-left: 16%;">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 450px; display: inline-block; border-bottom: 8px solid black;">
 
-             <form class="form-inline my-2 my-lg-0" style = "margin-left: 16%;">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 450px; display: inline-block; border-bottom: 8px solid black;">
+                    <datalist id = "pes">
 
-                <datalist id = "pes">
-
-                </datalist>
-             </form>
+                    </datalist>
+                </form>
+             </div>
             </nav>
             
          </div>
