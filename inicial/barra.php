@@ -66,7 +66,7 @@
                 
                 <div class = "collapse navbar-collapse" id = "collapse_target">
                      <ul class="navbar-nav">
-                        <li class="nav-item" id = "login">
+                        <li class="nav-item" id = "login" style = "margin-right: 4%;">
                             <a class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" id = "click_login" data-target="#modalPoll-1" data-toggle="modal"> <button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Login</button></a>
                              <div>
                                 <?php include ("../inicial/modal_form.php"); ?>
