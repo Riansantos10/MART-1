@@ -69,7 +69,7 @@
                              <ul class="nav justify-content-end">
                                 <section id = "login">
                                     <li class="nav-item">
-                                      <a class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 12px 5px 0px;" id = "click_login" data-target="#modalPoll-1" data-toggle="modal"> <button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Loginnn</button></a>
+                                      <a class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 12px 5px 0px;" id = "click_login" data-target="#modalPoll-1" data-toggle="modal"> <button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Login</button></a>
                                     </li>
                                     <div>
                                         <?php include ("../inicial/modal_form.php")?>
