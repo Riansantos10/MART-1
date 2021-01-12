@@ -60,46 +60,51 @@
 </head>
 <div>
             <nav class="navbar navbar-expand-sm navbar-red navbar-static-top fixed-top navbar-light" style = "background-color: red; man-height: 1%; min-height: 1%;">
-                <section class = "area_login">
-                    <ul class="navbar-nav">
-                         <ul class="nav justify-content-end">
-                            <section id = "login">
-                                <li class="nav-item">
-                                  <a class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 12px 5px 0px;" id = "click_login" data-target="#modalPoll-1" data-toggle="modal"> <button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Login</button></a>
-                                </li>
-                                <div>
-                                    <?php include ("../inicial/modal_form.php")?>
-                                </div>
-                                
-                            </section>
+                <button class = "navbar-toggler" data-toggle = "collapse" data-target = "collapse_target">
+                    <span class = "navbar-toggler-icon"></span>
+                </button>
+                <div class = "collapse navbar-collapse" id = "collapse_target">
+                    <section class = "area_login">
+                        <ul class="navbar-nav">
+                             <ul class="nav justify-content-end">
+                                <section id = "login">
+                                    <li class="nav-item">
+                                      <a class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 12px 5px 0px;" id = "click_login" data-target="#modalPoll-1" data-toggle="modal"> <button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Login</button></a>
+                                    </li>
+                                    <div>
+                                        <?php include ("../inicial/modal_form.php")?>
+                                    </div>
+
+                                </section>
 
 
-                             <section id = "comum">
-                                 <li class="nav-item">
-                                    <a id = "click_comum" class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 10px 5px 0px; text-decoration: none;" href = "../comum/cadastro.php"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Realizar cadastro comum</button></a>
-                                </li>
-                            </section>
-                            
-                            <section>
-                                <li class="nav-item">
-                                  <a class="nav-link font-weight-bold btn btn-light btn btn-outline-dark" id = "click_empre" style = "text-decoration: none; margin: 0px 10px 5px 0px;" href = "../empresa/form_empre.php"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Realizar cadastro empresarial</button></a>
-                                 </li>
-                            </section>
+                                 <section id = "comum">
+                                     <li class="nav-item">
+                                        <a id = "click_comum" class="font-weight-bold btn btn-light btn btn-outline-dark nav-link" style = "margin: 0px 10px 5px 0px; text-decoration: none;" href = "../comum/cadastro.php"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Realizar cadastro comum</button></a>
+                                    </li>
+                                </section>
+
+                                <section>
+                                    <li class="nav-item">
+                                      <a class="nav-link font-weight-bold btn btn-light btn btn-outline-dark" id = "click_empre" style = "text-decoration: none; margin: 0px 10px 5px 0px;" href = "../empresa/form_empre.php"><button style = "background-color: white; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px;">Realizar cadastro empresarial</button></a>
+                                     </li>
+                                </section>
+                            </ul>
                         </ul>
-                    </ul>
-                </section>
+                    </section>
+                </div>
                 <a href = "pagina_inicial.php" style = "margin-left: 8%;">
                     <img src = "../logoti.png" style = "height: 50px; margin-left: 10%; "/>
                 </a>
             <!--barra de pesquisa-->
 
-         <form class="form-inline my-2 my-lg-0" style = "margin-left: 16%;">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 450px; display: inline-block; border-bottom: 8px solid black;">
-            
-            <datalist id = "pes">
+             <form class="form-inline my-2 my-lg-0" style = "margin-left: 16%;">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id = "barra" list = "pes" style = "width: 450px; display: inline-block; border-bottom: 8px solid black;">
 
-            </datalist>
-         </form>
+                <datalist id = "pes">
+
+                </datalist>
+             </form>
             </nav>
             
          </div>
